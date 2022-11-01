@@ -9,14 +9,13 @@ public class CubeController : MonoBehaviour
     [SerializeField] private Transform endTarget;
     private Vector3 startPosition;
     
-    // Creating path cube should follow using NavMesh
     void Start()
     {
         startPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
-        //agent.SetDestination(endTarget.position);
     }
 
+    // Tacking start position and creating path cube should follow using NavMesh
     public void ReturnToStart()
     {
         agent.enabled = false;

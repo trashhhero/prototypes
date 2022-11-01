@@ -11,6 +11,7 @@ public class TargetController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // Updating score when cube reaches its destination
         if (other.gameObject.layer == 6) UpdateScore(1);
     }
 

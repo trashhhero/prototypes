@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour
 
     void Update()
     {
+        // Raycasting to rotate tracks
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
