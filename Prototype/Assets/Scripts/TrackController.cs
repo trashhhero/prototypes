@@ -19,10 +19,11 @@ public class TrackController : MonoBehaviour
     // If, at the time of rotation, cube is near track, function restores cube speed
     public void RotateTrack(int addRotation = 1)
     {
+        if (cube != null && currentRotation == correctRotation) return;
         transform.RotateAround(transform.position, Vector3.up, addRotation * 90f);
         int modulus = isStraight ? 2 : 4;
         currentRotation = (currentRotation + addRotation) % modulus;
-        if (cube != null && currentRotation == correctRotation) cube.GetComponent<NavMeshAgent>().speed = 5f;
+        if (cube != null && currentRotation == correctRotation) cube.GetComponent<NavMeshAgent>().speed = 7f;
     }
 
     //Checking for colliding object layer & track rotation; in case tracks aren't in correct rotation, object is stopped
